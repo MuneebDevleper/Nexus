@@ -6,6 +6,10 @@ import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { UserRole } from '../../types';
 
+
+
+
+
 export const RegisterPage: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -39,6 +43,7 @@ export const RegisterPage: React.FC = () => {
       setIsLoading(false);
     }
   };
+
   
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -75,7 +80,7 @@ export const RegisterPage: React.FC = () => {
               </label>
               <div className="grid grid-cols-2 gap-3">
                 <button
-                  type="button"
+                  type="button" 
                   className={`py-3 px-4 border rounded-md flex items-center justify-center transition-colors ${
                     role === 'entrepreneur'
                       ? 'border-primary-500 bg-primary-50 text-primary-700'

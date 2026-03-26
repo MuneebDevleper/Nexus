@@ -13,11 +13,13 @@ export const Navbar: React.FC = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
   const handleLogout = () => {
     logout();
     navigate('/login');
   };
+
+
   
   // User dashboard route based on role
   const dashboardRoute = user?.role === 'entrepreneur' 

@@ -11,6 +11,13 @@ import { CollaborationRequest } from '../../types';
 import { getRequestsForEntrepreneur } from '../../data/collaborationRequests';
 import { investors } from '../../data/users';
 
+
+
+
+
+
+
+
 export const EntrepreneurDashboard: React.FC = () => {
   const { user } = useAuth();
   const [collaborationRequests, setCollaborationRequests] = useState<CollaborationRequest[]>([]);
@@ -31,6 +38,8 @@ export const EntrepreneurDashboard: React.FC = () => {
       )
     );
   };
+
+  
   
   if (!user) return null;
   
@@ -43,6 +52,7 @@ export const EntrepreneurDashboard: React.FC = () => {
           <h1 className="text-2xl font-bold text-gray-900">Welcome, {user.name}</h1>
           <p className="text-gray-600">Here's what's happening with your startup today</p>
         </div>
+    
         
         <Link to="/investors">
           <Button
@@ -77,6 +87,7 @@ export const EntrepreneurDashboard: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm font-medium text-secondary-700">Total Connections</p>
+              
                 <h3 className="text-xl font-semibold text-secondary-900">
                   {collaborationRequests.filter(req => req.status === 'accepted').length}
                 </h3>

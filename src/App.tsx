@@ -27,22 +27,31 @@ import { SettingsPage } from './pages/settings/SettingsPage';
 import { HelpPage } from './pages/help/HelpPage';
 import { DealsPage } from './pages/deals/DealsPage';
 
+import Dashboard from './pages/Dashboard';
+
+
+   <Dashboard />
+
 // Chat Pages
 import { ChatPage } from './pages/chat/ChatPage';
 
 function App() {
   return (
     <AuthProvider>
+    
       <Router>
         <Routes>
+           
           {/* Authentication Routes */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          
           
           {/* Dashboard Routes */}
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="entrepreneur" element={<EntrepreneurDashboard />} />
             <Route path="investor" element={<InvestorDashboard />} />
+             
           </Route>
           
           {/* Profile Routes */}
@@ -55,6 +64,7 @@ function App() {
           <Route path="/investors" element={<DashboardLayout />}>
             <Route index element={<InvestorsPage />} />
           </Route>
+           
           
           <Route path="/entrepreneurs" element={<DashboardLayout />}>
             <Route index element={<EntrepreneursPage />} />
@@ -97,8 +107,10 @@ function App() {
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </Router>
+       
     </AuthProvider>
   );
 }
+
 
 export default App;
